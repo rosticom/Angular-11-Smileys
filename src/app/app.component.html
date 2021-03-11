@@ -1,0 +1,55 @@
+
+<div class="content">
+  <section class="roboto">
+    <div class="space-between row">
+      <div class="header-section">Your Diary</div>
+        <span class="material-icons md-24 md-primary pointer">arrow_forward</span>
+    </div>
+    <div class="msg-container">
+      <mat-form-field 
+        appearance="fill" 
+        class="msg-form">
+        <textarea
+          maxlength="276"
+          matInput 
+          placeholder="Write something"
+          type="text"
+          class="msg-input"
+          name="newMessage"
+          [(ngModel)]="textArea">
+        </textarea>
+        <emoji-mart class="emoji-mart pointer" 
+          *ngIf="isEmojiPickerVisible" 
+          (emojiSelect)="addEmoji($event)" 
+          title="Choose your emoji">
+        </emoji-mart>
+        <div class="space-between row padding-top">
+          <span
+            *ngIf="!isEmojiPickerVisible" 
+            (click)="isEmojiPickerVisible = !isEmojiPickerVisible;"
+            class="material-icons md-24 md-primary pointer">
+            insert_emoticon
+          </span>
+          <span
+            *ngIf="isEmojiPickerVisible" 
+            (click)="isEmojiPickerVisible = !isEmojiPickerVisible;"
+            class="pointer emoji-open-icon">
+          </span>
+          <button mat-flat-button class="save-button" 
+            (click)="messageSave()">
+            <span class="save-button save-button__span pointer">
+              Save
+            </span>
+          </button>
+        </div>
+      </mat-form-field>
+      <div class="scroll-container">
+        <app-sub-message
+          *ngFor="let message of this.globals.messagesList"
+          [message]="message">
+          [id]="messagesId"
+        </app-sub-message>
+      </div>
+    </div>
+  </section>
+</div>  

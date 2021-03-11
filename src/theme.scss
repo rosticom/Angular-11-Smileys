@@ -1,0 +1,19 @@
+
+@import '~@angular/material/theming';
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto, monospace',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(14px, 24px, 500),
+);
+
+$config: mat-typography-config();
+
+section.roboto {
+    font-family: mat-font-family($config);
+    font-size: mat-font-size($config, body-1);
+    font-weight: 500; 
+}
+
+.material-icons.md-24 { font-size: 25px; font-weight: 500; }
+.material-icons.md-primary { color: rgb(62, 82, 190); }

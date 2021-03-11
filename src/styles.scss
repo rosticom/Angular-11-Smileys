@@ -1,0 +1,52 @@
+
+html, body {
+    margin: 0; 
+    overflow: hidden;
+}
+
+.content {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.row {
+    display: flex; 
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.padding-top {
+    padding-top: 16px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+span {
+    user-select: none;
+}
+
+.mat-form-field-flex {
+    padding: 0 !important;
+}
+
+.emoji-mart {
+    border: none !important;
+    &-preview, &-search {
+        display: none;
+    }
+    &-emoji span {
+        cursor: pointer !important;
+    }
+}

@@ -1,0 +1,17 @@
+
+<div class="container-message">
+    <div class="row space-between message-header">
+        <div class="row calendar-row">
+            <div class="calendar-icon"></div>
+            <div class="calendar-text">{{this.message.date_format | dateFormatPipe}}</div>
+        </div>
+        <span
+            (click)="messageMenu()"
+            class="material-icons md-primary pointer more-icon">
+            more_vert
+        </span>
+    </div>
+    <div class="message-text">
+        {{ this.message.text }}
+    </div>
+</div>
